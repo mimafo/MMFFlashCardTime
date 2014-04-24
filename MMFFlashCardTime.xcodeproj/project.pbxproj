@@ -22,6 +22,11 @@
 		27DE579619089B8300F01542 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DE577A19089B8300F01542 /* CoreData.framework */; };
 		27DE579E19089B8300F01542 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DE579C19089B8300F01542 /* InfoPlist.strings */; };
 		27DE57A019089B8300F01542 /* MMFFlashCardTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE579F19089B8300F01542 /* MMFFlashCardTimeTests.m */; };
+		27DE57AA19089BA300F01542 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DE57A919089BA300F01542 /* Storyboard.storyboard */; };
+		27DE57AD19089BE200F01542 /* MMFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE57AC19089BE200F01542 /* MMFMainViewController.m */; };
+		27DE57B319089CD300F01542 /* MMFDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE57B219089CD300F01542 /* MMFDataController.m */; };
+		27DE57B61908A0FA00F01542 /* MMFProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE57B51908A0FA00F01542 /* MMFProblemViewController.m */; };
+		27DE57B91908A4B700F01542 /* MMFCompletedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE57B81908A4B700F01542 /* MMFCompletedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +49,8 @@
 		27DE578019089B8300F01542 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27DE578219089B8300F01542 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27DE578419089B8300F01542 /* MMFFlashCardTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MMFFlashCardTime-Prefix.pch"; sourceTree = "<group>"; };
-		27DE578519089B8300F01542 /* MMFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMFAppDelegate.h; sourceTree = "<group>"; };
-		27DE578619089B8300F01542 /* MMFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMFAppDelegate.m; sourceTree = "<group>"; };
+		27DE578519089B8300F01542 /* MMFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMFAppDelegate.h; path = MMFFlashCardTime/MMFAppDelegate.h; sourceTree = "<group>"; };
+		27DE578619089B8300F01542 /* MMFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MMFAppDelegate.m; path = MMFFlashCardTime/MMFAppDelegate.m; sourceTree = "<group>"; };
 		27DE578919089B8300F01542 /* MMFFlashCardTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MMFFlashCardTime.xcdatamodel; sourceTree = "<group>"; };
 		27DE578B19089B8300F01542 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27DE579119089B8300F01542 /* MMFFlashCardTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMFFlashCardTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +58,15 @@
 		27DE579B19089B8300F01542 /* MMFFlashCardTimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMFFlashCardTimeTests-Info.plist"; sourceTree = "<group>"; };
 		27DE579D19089B8300F01542 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27DE579F19089B8300F01542 /* MMFFlashCardTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMFFlashCardTimeTests.m; sourceTree = "<group>"; };
+		27DE57A919089BA300F01542 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		27DE57AB19089BE200F01542 /* MMFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFMainViewController.h; sourceTree = "<group>"; };
+		27DE57AC19089BE200F01542 /* MMFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFMainViewController.m; sourceTree = "<group>"; };
+		27DE57B119089CD300F01542 /* MMFDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFDataController.h; sourceTree = "<group>"; };
+		27DE57B219089CD300F01542 /* MMFDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFDataController.m; sourceTree = "<group>"; };
+		27DE57B41908A0FA00F01542 /* MMFProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFProblemViewController.h; sourceTree = "<group>"; };
+		27DE57B51908A0FA00F01542 /* MMFProblemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFProblemViewController.m; sourceTree = "<group>"; };
+		27DE57B71908A4B700F01542 /* MMFCompletedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFCompletedViewController.h; sourceTree = "<group>"; };
+		27DE57B81908A4B700F01542 /* MMFCompletedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFCompletedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,8 @@
 		27DE576819089B8300F01542 = {
 			isa = PBXGroup;
 			children = (
+				27DE578519089B8300F01542 /* MMFAppDelegate.h */,
+				27DE578619089B8300F01542 /* MMFAppDelegate.m */,
 				27DE577C19089B8300F01542 /* MMFFlashCardTime */,
 				27DE579919089B8300F01542 /* MMFFlashCardTimeTests */,
 				27DE577319089B8300F01542 /* Frameworks */,
@@ -115,8 +131,9 @@
 		27DE577C19089B8300F01542 /* MMFFlashCardTime */ = {
 			isa = PBXGroup;
 			children = (
-				27DE578519089B8300F01542 /* MMFAppDelegate.h */,
-				27DE578619089B8300F01542 /* MMFAppDelegate.m */,
+				27DE57B019089CA700F01542 /* Model */,
+				27DE57AF19089C9C00F01542 /* Controllers */,
+				27DE57AE19089C9000F01542 /* Views */,
 				27DE578B19089B8300F01542 /* Images.xcassets */,
 				27DE578819089B8300F01542 /* MMFFlashCardTime.xcdatamodeld */,
 				27DE577D19089B8300F01542 /* Supporting Files */,
@@ -151,6 +168,36 @@
 				27DE579C19089B8300F01542 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27DE57AE19089C9000F01542 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27DE57A919089BA300F01542 /* Storyboard.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		27DE57AF19089C9C00F01542 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27DE57AB19089BE200F01542 /* MMFMainViewController.h */,
+				27DE57AC19089BE200F01542 /* MMFMainViewController.m */,
+				27DE57B41908A0FA00F01542 /* MMFProblemViewController.h */,
+				27DE57B51908A0FA00F01542 /* MMFProblemViewController.m */,
+				27DE57B71908A4B700F01542 /* MMFCompletedViewController.h */,
+				27DE57B81908A4B700F01542 /* MMFCompletedViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		27DE57B019089CA700F01542 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27DE57B119089CD300F01542 /* MMFDataController.h */,
+				27DE57B219089CD300F01542 /* MMFDataController.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +278,7 @@
 			files = (
 				27DE578119089B8300F01542 /* InfoPlist.strings in Resources */,
 				27DE578C19089B8300F01542 /* Images.xcassets in Resources */,
+				27DE57AA19089BA300F01542 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DE57B91908A4B700F01542 /* MMFCompletedViewController.m in Sources */,
+				27DE57B319089CD300F01542 /* MMFDataController.m in Sources */,
 				27DE578A19089B8300F01542 /* MMFFlashCardTime.xcdatamodeld in Sources */,
 				27DE578319089B8300F01542 /* main.m in Sources */,
+				27DE57B61908A0FA00F01542 /* MMFProblemViewController.m in Sources */,
+				27DE57AD19089BE200F01542 /* MMFMainViewController.m in Sources */,
 				27DE578719089B8300F01542 /* MMFAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

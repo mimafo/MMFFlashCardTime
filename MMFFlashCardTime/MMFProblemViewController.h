@@ -1,5 +1,5 @@
 //
-//  MMFAppDelegate.h
+//  MMFProblemViewController.h
 //  MMFFlashCardTime
 //
 //  Created by Michael Folcher on 4/23/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMFAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface MMFProblemViewController : UIViewController
 
 @end
