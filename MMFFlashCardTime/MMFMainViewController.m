@@ -10,8 +10,6 @@
 
 @interface MMFMainViewController ()
 
-- (IBAction)goPressed:(UIButton *)sender;
-
 @end
 
 @implementation MMFMainViewController
@@ -31,13 +29,22 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    //Call super class's method
+    [super viewWillAppear:animated];
+    
+    self.title = @"Main screen";
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -45,11 +52,6 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)goPressed:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"goSegue" sender:self];
 }
 
 @end

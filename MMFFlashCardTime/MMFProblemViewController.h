@@ -10,4 +10,6 @@
 
 @interface MMFProblemViewController : UIViewController
 
+@property (nonatomic, assign) NSUInteger problemNumber;
+
 @end

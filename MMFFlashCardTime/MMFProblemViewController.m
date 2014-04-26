@@ -13,12 +13,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *firstNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondNumberLabel;
 @property (weak, nonatomic) IBOutlet UITextField *answerTextField;
-- (IBAction)nextPressed:(UIButton *)sender;
-- (IBAction)donePressed:(UIButton *)sender;
 
 @end
 
 @implementation MMFProblemViewController
+
+#pragma mark - View Controller methods
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,13 +35,20 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.title = [NSString stringWithFormat:@"Problem screen: %lu",(unsigned long)self.problemNumber];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -49,13 +56,11 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)nextPressed:(UIButton *)sender {
-}
-
-- (IBAction)donePressed:(UIButton *)sender {
+    UIViewController *vc = [segue destinationViewController];
+    if ([vc isKindOfClass:[self class]]) {
+        MMFProblemViewController *pvc = (MMFProblemViewController *)vc;
+        pvc.problemNumber = self.problemNumber + 1;
+    }
 }
 
 @end
