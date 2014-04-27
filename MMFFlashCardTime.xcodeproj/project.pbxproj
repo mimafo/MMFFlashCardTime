@@ -27,6 +27,7 @@
 		27DE57B319089CD300F01542 /* MMFDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE57B219089CD300F01542 /* MMFDataController.m */; };
 		27DE57B61908A0FA00F01542 /* MMFProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE57B51908A0FA00F01542 /* MMFProblemViewController.m */; };
 		27DE57B91908A4B700F01542 /* MMFCompletedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE57B81908A4B700F01542 /* MMFCompletedViewController.m */; };
+		27ECD9F5190C9F1A006D96DD /* MMFProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = 27ECD9F4190C9F1A006D96DD /* MMFProblem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		27DE57B51908A0FA00F01542 /* MMFProblemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFProblemViewController.m; sourceTree = "<group>"; };
 		27DE57B71908A4B700F01542 /* MMFCompletedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFCompletedViewController.h; sourceTree = "<group>"; };
 		27DE57B81908A4B700F01542 /* MMFCompletedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFCompletedViewController.m; sourceTree = "<group>"; };
+		27ECD9F3190C9F1A006D96DD /* MMFProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFProblem.h; sourceTree = "<group>"; };
+		27ECD9F4190C9F1A006D96DD /* MMFProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFProblem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,8 @@
 			children = (
 				27DE57B119089CD300F01542 /* MMFDataController.h */,
 				27DE57B219089CD300F01542 /* MMFDataController.m */,
+				27ECD9F3190C9F1A006D96DD /* MMFProblem.h */,
+				27ECD9F4190C9F1A006D96DD /* MMFProblem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27ECD9F5190C9F1A006D96DD /* MMFProblem.m in Sources */,
 				27DE57B91908A4B700F01542 /* MMFCompletedViewController.m in Sources */,
 				27DE57B319089CD300F01542 /* MMFDataController.m in Sources */,
 				27DE578A19089B8300F01542 /* MMFFlashCardTime.xcdatamodeld in Sources */,
@@ -500,6 +506,7 @@
 				27DE57A519089B8300F01542 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27DE57A619089B8300F01542 /* Build configuration list for PBXNativeTarget "MMFFlashCardTimeTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +515,7 @@
 				27DE57A819089B8300F01542 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

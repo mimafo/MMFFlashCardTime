@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i7-lF-q6R">
-                                <rect key="frame" x="117" y="114" width="80" height="27"/>
+                                <rect key="frame" x="120" y="114" width="80" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="rNd-TD-3rx"/>
@@ -71,8 +71,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igc-Y8-rov">
-                                <rect key="frame" x="117" y="149" width="80" height="27"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igc-Y8-rov">
+                                <rect key="frame" x="120" y="149" width="80" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI8-DM-Pzt">
-                                <rect key="frame" x="109" y="222" width="97" height="30"/>
+                                <rect key="frame" x="112" y="222" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NnX-wi-CEa"/>
@@ -102,7 +102,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1j-Cw-Ala">
-                                <rect key="frame" x="109" y="260" width="97" height="35"/>
+                                <rect key="frame" x="112" y="260" width="97" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Done">
@@ -117,6 +117,7 @@
                         <constraints>
                             <constraint firstItem="3i7-lF-q6R" firstAttribute="leading" secondItem="igc-Y8-rov" secondAttribute="leading" id="0pu-tE-h9I"/>
                             <constraint firstItem="3i7-lF-q6R" firstAttribute="centerX" secondItem="f1j-Cw-Ala" secondAttribute="centerX" id="2Dc-gs-icn"/>
+                            <constraint firstItem="JI8-DM-Pzt" firstAttribute="leading" secondItem="waN-o3-yVy" secondAttribute="leading" id="358-sv-iXi"/>
                             <constraint firstItem="waN-o3-yVy" firstAttribute="centerX" secondItem="OOs-Av-bk6" secondAttribute="centerX" id="4rA-Vr-fRA"/>
                             <constraint firstItem="3i7-lF-q6R" firstAttribute="centerX" secondItem="JI8-DM-Pzt" secondAttribute="centerX" id="GRA-Cn-MCb"/>
                             <constraint firstItem="3i7-lF-q6R" firstAttribute="top" secondItem="c1Z-Ej-Acj" secondAttribute="bottom" constant="50" id="IhZ-zp-W5g"/>
@@ -124,7 +125,6 @@
                             <constraint firstItem="3i7-lF-q6R" firstAttribute="trailing" secondItem="igc-Y8-rov" secondAttribute="trailing" id="NFz-Yn-5Hg"/>
                             <constraint firstItem="JI8-DM-Pzt" firstAttribute="leading" secondItem="f1j-Cw-Ala" secondAttribute="leading" id="PDk-7B-R3C"/>
                             <constraint firstItem="igc-Y8-rov" firstAttribute="top" secondItem="3i7-lF-q6R" secondAttribute="bottom" constant="8" symbolic="YES" id="QB8-fc-0bu"/>
-                            <constraint firstItem="3i7-lF-q6R" firstAttribute="leading" secondItem="OOs-Av-bk6" secondAttribute="leading" constant="117" id="T2w-Bp-8bD"/>
                             <constraint firstItem="JI8-DM-Pzt" firstAttribute="top" secondItem="waN-o3-yVy" secondAttribute="bottom" constant="8" symbolic="YES" id="hpb-nG-d83"/>
                             <constraint firstItem="f1j-Cw-Ala" firstAttribute="top" secondItem="JI8-DM-Pzt" secondAttribute="bottom" constant="8" symbolic="YES" id="mrr-T1-973"/>
                         </constraints>

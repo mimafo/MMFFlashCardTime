@@ -7,8 +7,11 @@
 //
 
 #import "MMFProblemViewController.h"
+#import "MMFProblem.h"
 
 @interface MMFProblemViewController ()
+
+@property (strong, nonatomic) MMFProblem *problem;
 
 @property (weak, nonatomic) IBOutlet UILabel *firstNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondNumberLabel;
@@ -25,6 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -33,6 +37,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.problem = [MMFProblem createRandomProblemWithOperation:kSubtraction];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -40,6 +46,7 @@
     [super viewWillAppear:animated];
     
     self.title = [NSString stringWithFormat:@"Problem screen: %lu",(unsigned long)self.problemNumber];
+    [self displayNumbers];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +68,15 @@
         MMFProblemViewController *pvc = (MMFProblemViewController *)vc;
         pvc.problemNumber = self.problemNumber + 1;
     }
+}
+
+#pragma mark - Private Methods
+
+-(void)displayNumbers
+{
+    self.firstNumberLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.problem.firstNumber];
+    self.secondNumberLabel.text = [NSString stringWithFormat:@"%@ %lu",[self.problem operationString],(unsigned long)self.problem.secondNumber];
+    
 }
 
 @end
