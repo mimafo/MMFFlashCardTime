@@ -8,8 +8,13 @@
 
 #import "MMFProblemViewController.h"
 #import "MMFProblem.h"
+#import "UIAlertView+SimplePopupMessage.h"
+#import "MMFTest.h"
 
-@interface MMFProblemViewController ()
+static NSString * const nextSegue = @"nextSegue";
+static NSString * const doneSegue = @"doneSegue";
+
+@interface MMFProblemViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) MMFProblem *problem;
 
@@ -17,9 +22,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *secondNumberLabel;
 @property (weak, nonatomic) IBOutlet UITextField *answerTextField;
 
+@property (nonatomic, readonly) MMFTest *sharedTest;
+
 @end
 
 @implementation MMFProblemViewController
+
+#pragma mark - property getters and setters
+
+-(MMFTest *)sharedTest
+{
+    return [MMFTest sharedTest];
+}
 
 #pragma mark - View Controller methods
 
@@ -47,6 +61,7 @@
     
     self.title = [NSString stringWithFormat:@"Problem screen: %lu",(unsigned long)self.problemNumber];
     [self displayNumbers];
+    [self.answerTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,16 +73,60 @@
 
 #pragma mark - Navigation
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    BOOL proceed = YES;
+    if ([identifier isEqualToString:nextSegue]) {
+        
+        [self.answerTextField resignFirstResponder];
+        
+        //Put your validation code here and return YES or NO as needed
+        if ([self.answerTextField.text length] < 1) {
+            
+            [self displayAnswerErrorMessage:@"Answer is missing, try again"];
+            proceed = NO;
+            
+        } else {
+            
+            NSUInteger theAnswer = [self.answerTextField.text integerValue];
+            if (theAnswer != [self.problem answer]) {
+                [self displayAnswerErrorMessage:@"Incorrect answer, try again"];
+                proceed = NO;
+            }
+        }
+
+    }
+    
+    return proceed;
+}
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    UIViewController *vc = [segue destinationViewController];
-    if ([vc isKindOfClass:[self class]]) {
-        MMFProblemViewController *pvc = (MMFProblemViewController *)vc;
-        pvc.problemNumber = self.problemNumber + 1;
+    if ([segue.identifier isEqualToString:nextSegue]) {
+        
+        self.sharedTest.correctCount++;
+    
+        // Pass the selected object to the new view controller.
+        UIViewController *vc = [segue destinationViewController];
+        if ([vc isKindOfClass:[self class]]) {
+            MMFProblemViewController *pvc = (MMFProblemViewController *)vc;
+            pvc.problemNumber = self.problemNumber + 1;
+        }
+        
     }
+}
+
+#pragma mark - UITextFieldDelegate method(s)
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if (textField == self.answerTextField) {
+        [self.navigationController performSegueWithIdentifier:nextSegue sender:self];
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark - Private Methods
@@ -76,6 +135,15 @@
 {
     self.firstNumberLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.problem.firstNumber];
     self.secondNumberLabel.text = [NSString stringWithFormat:@"%@ %lu",[self.problem operationString],(unsigned long)self.problem.secondNumber];
+    
+}
+
+-(void)displayAnswerErrorMessage:(NSString *)errorMessage
+{
+    
+    [[UIAlertView alertPopupWithTitle:@"Wrong Answer" withMessage:errorMessage] show];
+    self.answerTextField.text = @"";
+    [self.answerTextField becomeFirstResponder];
     
 }
 

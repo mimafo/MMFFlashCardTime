@@ -7,8 +7,14 @@
 //
 
 #import "MMFMainViewController.h"
+#import "MMFProblemViewController.h"
+#import "MMFTest.h"
+
+static NSString * const startSegue = @"startSegue";
 
 @interface MMFMainViewController ()
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *operationControl;
 
 @end
 
@@ -34,7 +40,7 @@
     //Call super class's method
     [super viewWillAppear:animated];
     
-    self.title = @"Main screen";
+    self.title = @"Test Setup";
     
 }
 
@@ -52,6 +58,21 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:startSegue]) {
+        OperationType operation = kAddition;
+        
+        if (self.operationControl.selectedSegmentIndex == 1) {
+            operation = kSubtraction;
+        } else if (self.operationControl.selectedSegmentIndex == 2) {
+            operation = kMultiplication;
+        }
+            
+        [MMFTest setTestOperation:operation];
+        
+        MMFProblemViewController *vc = (MMFProblemViewController *)segue.destinationViewController;
+        vc.problemNumber = 1;
+        
+    }
 }
 
 @end

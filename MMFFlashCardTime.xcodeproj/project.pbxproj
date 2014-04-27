@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27287E41190D5048007FCA38 /* UIAlertView+SimplePopupMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 27287E40190D5048007FCA38 /* UIAlertView+SimplePopupMessage.m */; };
+		27287E45190D55A6007FCA38 /* MMFTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27287E44190D55A6007FCA38 /* MMFTest.m */; };
 		27DE577519089B8300F01542 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DE577419089B8300F01542 /* Foundation.framework */; };
 		27DE577719089B8300F01542 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DE577619089B8300F01542 /* CoreGraphics.framework */; };
 		27DE577919089B8300F01542 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DE577819089B8300F01542 /* UIKit.framework */; };
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27287E3F190D5048007FCA38 /* UIAlertView+SimplePopupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+SimplePopupMessage.h"; sourceTree = "<group>"; };
+		27287E40190D5048007FCA38 /* UIAlertView+SimplePopupMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+SimplePopupMessage.m"; sourceTree = "<group>"; };
+		27287E43190D55A6007FCA38 /* MMFTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFTest.h; sourceTree = "<group>"; };
+		27287E44190D55A6007FCA38 /* MMFTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFTest.m; sourceTree = "<group>"; };
 		27DE577119089B8300F01542 /* MMFFlashCardTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMFFlashCardTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DE577419089B8300F01542 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27DE577619089B8300F01542 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27287E42190D5052007FCA38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27287E3F190D5048007FCA38 /* UIAlertView+SimplePopupMessage.h */,
+				27287E40190D5048007FCA38 /* UIAlertView+SimplePopupMessage.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		27DE576819089B8300F01542 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +149,7 @@
 		27DE577C19089B8300F01542 /* MMFFlashCardTime */ = {
 			isa = PBXGroup;
 			children = (
+				27287E42190D5052007FCA38 /* Extensions */,
 				27DE57B019089CA700F01542 /* Model */,
 				27DE57AF19089C9C00F01542 /* Controllers */,
 				27DE57AE19089C9000F01542 /* Views */,
@@ -201,6 +217,8 @@
 				27DE57B219089CD300F01542 /* MMFDataController.m */,
 				27ECD9F3190C9F1A006D96DD /* MMFProblem.h */,
 				27ECD9F4190C9F1A006D96DD /* MMFProblem.m */,
+				27287E43190D55A6007FCA38 /* MMFTest.h */,
+				27287E44190D55A6007FCA38 /* MMFTest.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -304,10 +322,12 @@
 			files = (
 				27ECD9F5190C9F1A006D96DD /* MMFProblem.m in Sources */,
 				27DE57B91908A4B700F01542 /* MMFCompletedViewController.m in Sources */,
+				27287E45190D55A6007FCA38 /* MMFTest.m in Sources */,
 				27DE57B319089CD300F01542 /* MMFDataController.m in Sources */,
 				27DE578A19089B8300F01542 /* MMFFlashCardTime.xcdatamodeld in Sources */,
 				27DE578319089B8300F01542 /* main.m in Sources */,
 				27DE57B61908A0FA00F01542 /* MMFProblemViewController.m in Sources */,
+				27287E41190D5048007FCA38 /* UIAlertView+SimplePopupMessage.m in Sources */,
 				27DE57AD19089BE200F01542 /* MMFMainViewController.m in Sources */,
 				27DE578719089B8300F01542 /* MMFAppDelegate.m in Sources */,
 			);
