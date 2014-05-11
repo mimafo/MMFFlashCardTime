@@ -26,6 +26,8 @@ static NSString * const doneSegue = @"doneSegue";
 @property (nonatomic, readonly) MMFTest *sharedTest;
 @property (nonatomic, assign) BOOL completed;
 
+@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation MMFProblemViewController
@@ -35,6 +37,17 @@ static NSString * const doneSegue = @"doneSegue";
 -(MMFTest *)sharedTest
 {
     return [MMFTest sharedTest];
+}
+-(NSTimer *)timer
+{
+    if (!_timer) {
+        _timer = [NSTimer timerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(handleTimer:)
+                                       userInfo:nil
+                                        repeats:YES];
+    }
+    return _timer;
 }
 
 #pragma mark - View Controller methods
@@ -56,6 +69,9 @@ static NSString * const doneSegue = @"doneSegue";
     self.problem = [MMFProblem createRandomProblemWithOperation:self.sharedTest.operation];
     self.completed = NO;
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.view addGestureRecognizer:tap];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -73,6 +89,7 @@ static NSString * const doneSegue = @"doneSegue";
     }
     
     self.timerLabel.text = [self.sharedTest timeRemaining];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -136,18 +153,35 @@ static NSString * const doneSegue = @"doneSegue";
             pvc.problemNumber = self.problemNumber + 1;
         }
         
+        [self cleanup];
+        
     }
 }
 
 #pragma mark - UITextFieldDelegate method(s)
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
     
     if (textField == self.answerTextField) {
         [self.navigationController performSegueWithIdentifier:nextSegue sender:self];
         return NO;
     }
     return YES;
+}
+
+#pragma mark - Gesture recognizers
+
+-(void)handleTap:(UIGestureRecognizer *)gesture
+{
+    [self.view endEditing:YES];
+}
+
+#pragma mark - Timer handler
+
+-(void)handleTimer:(NSTimer *)timer
+{
+    self.timerLabel.text = [self.sharedTest timeRemaining];
 }
 
 #pragma mark - Private Methods
@@ -166,6 +200,13 @@ static NSString * const doneSegue = @"doneSegue";
     self.answerTextField.text = @"";
     [self.answerTextField becomeFirstResponder];
     
+}
+
+-(void)cleanup
+{
+    self.completed = YES;
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 @end

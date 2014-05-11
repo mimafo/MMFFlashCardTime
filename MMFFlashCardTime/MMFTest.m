@@ -87,12 +87,14 @@
     
     float correctPerMin = self.correctCount / self.durationMinutes;
     
-    if (correctPerMin < 10) {
+    if (correctPerMin < 5) {
         rank = @"Need more practice";
+    } else if (correctPerMin < 10) {
+        rank = @"Pretty good";
     } else if (correctPerMin < 20) {
-        rank = @"Good Job";
+        rank = @"Good job!";
     } else if (correctPerMin < 30) {
-        rank = @"Very Good!";
+        rank = @"Very Good job!";
     } else {
         rank = @"Excellent!";
     }
