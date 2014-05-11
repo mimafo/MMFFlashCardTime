@@ -7,13 +7,23 @@
 //
 
 #import "MMFCompletedViewController.h"
+#import "MMFTest.h"
 
 @interface MMFCompletedViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankLabel;
+@property (nonatomic, readonly) MMFTest *sharedTest;
 
 @end
 
 @implementation MMFCompletedViewController
+
+-(MMFTest *)sharedTest
+{
+    return [MMFTest sharedTest];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +38,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.scoreLabel.text = @"Hello World!";
+    self.scoreLabel.text = [@(self.sharedTest.correctCount) stringValue];
+    self.durationLabel.text = [NSString stringWithFormat:@"%lu minute(s)", (unsigned long)self.sharedTest.durationMinutes];
+    self.rankLabel.text = [self.sharedTest rank];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,15 +50,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

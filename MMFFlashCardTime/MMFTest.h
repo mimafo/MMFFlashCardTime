@@ -18,8 +18,10 @@
 
 -(id)initWithOperation:(OperationType)operation;
 -(BOOL)isTimeExpired;
+-(NSString *)timeRemaining;
+-(NSString *)rank;
 
 +(instancetype)sharedTest;
-+(void)setTestOperation:(OperationType)operation;
++(void)initializeTestWithOperation:(OperationType)operation;
 
 @end

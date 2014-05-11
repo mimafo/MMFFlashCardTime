@@ -11,8 +11,9 @@
 @implementation MMFProblem
 
 
-#define MAX_NUMBER 20;
-#define MIN_NUMBER 0;
+#define MAX_NUMBER 20
+#define MIN_NUMBER 0
+#define MULTIPLICATION_MAX_NUMBER 10
 
 #pragma mark - Initializers
 
@@ -64,6 +65,9 @@
 {
     NSUInteger lowerBounds = MIN_NUMBER;
     NSUInteger uppperBounds = MAX_NUMBER;
+    
+    if (operation == kMultiplication)
+        uppperBounds = MULTIPLICATION_MAX_NUMBER;
     
     MMFProblem *problem = [self new];
     problem.operation = operation;

@@ -21,8 +21,10 @@ static NSString * const doneSegue = @"doneSegue";
 @property (weak, nonatomic) IBOutlet UILabel *firstNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondNumberLabel;
 @property (weak, nonatomic) IBOutlet UITextField *answerTextField;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @property (nonatomic, readonly) MMFTest *sharedTest;
+@property (nonatomic, assign) BOOL completed;
 
 @end
 
@@ -51,17 +53,36 @@ static NSString * const doneSegue = @"doneSegue";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.problem = [MMFProblem createRandomProblemWithOperation:kSubtraction];
+    self.problem = [MMFProblem createRandomProblemWithOperation:self.sharedTest.operation];
+    self.completed = NO;
     
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+        
     self.title = [NSString stringWithFormat:@"Problem screen: %lu",(unsigned long)self.problemNumber];
     [self displayNumbers];
-    [self.answerTextField becomeFirstResponder];
+    
+    if (self.completed) {
+        [self.answerTextField resignFirstResponder];
+        self.answerTextField.enabled = NO;
+    } else {
+        [self.answerTextField becomeFirstResponder];
+    }
+    
+    self.timerLabel.text = [self.sharedTest timeRemaining];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (self.sharedTest.isTimeExpired) {
+        [self performSegueWithIdentifier:doneSegue sender:self];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning

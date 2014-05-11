@@ -22,10 +22,11 @@
     });
     return _test;
 }
-+(void)setTestOperation:(OperationType)operation
++(void)initializeTestWithOperation:(OperationType)operation
 {
     MMFTest *test = [MMFTest sharedTest];
     test.operation = operation;
+    test.startDate = [NSDate new];
 }
 
 -(id)init
@@ -34,7 +35,7 @@
     if (self) {
         self.correctCount = 0;
         self.startDate = [NSDate new];
-        self.durationMinutes = 5;
+        self.durationMinutes = 2;
     }
     return self;
 }
@@ -60,6 +61,43 @@
     
     
     return expired;
+}
+
+-(NSString *)timeRemaining
+{
+    NSString *remaining = @"";
+    
+    double secondsInAMinute = 60;
+    
+    NSDate *now = [NSDate new];
+    NSTimeInterval interval = [now timeIntervalSinceDate:self.startDate];
+    NSInteger seconds = (self.durationMinutes * secondsInAMinute) - (long)interval;
+    
+    
+    NSInteger minutes = seconds / secondsInAMinute;
+    NSInteger remainderSeconds =  seconds - (secondsInAMinute * minutes);
+    
+    remaining = [NSString stringWithFormat:@"%ld:%02ld",(long)minutes, (long)remainderSeconds];
+    return remaining;
+}
+
+-(NSString *)rank
+{
+    NSString *rank;
+    
+    float correctPerMin = self.correctCount / self.durationMinutes;
+    
+    if (correctPerMin < 10) {
+        rank = @"Need more practice";
+    } else if (correctPerMin < 20) {
+        rank = @"Good Job";
+    } else if (correctPerMin < 30) {
+        rank = @"Very Good!";
+    } else {
+        rank = @"Excellent!";
+    }
+    
+    return rank;
 }
 
 @end

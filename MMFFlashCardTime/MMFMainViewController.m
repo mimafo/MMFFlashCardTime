@@ -67,12 +67,18 @@ static NSString * const startSegue = @"startSegue";
             operation = kMultiplication;
         }
             
-        [MMFTest setTestOperation:operation];
+        [MMFTest initializeTestWithOperation:operation];
         
         MMFProblemViewController *vc = (MMFProblemViewController *)segue.destinationViewController;
         vc.problemNumber = 1;
         
     }
+}
+
+-(void)unwindToPresentingViewController:(UIStoryboardSegue *)unwindSegue
+{
+    MMFTest *test = [MMFTest sharedTest];
+    test.correctCount = 0;
 }
 
 @end
