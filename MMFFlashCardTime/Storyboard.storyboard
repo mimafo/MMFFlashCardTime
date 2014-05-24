@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="b5R-Jw-FOp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="b5R-Jw-FOp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -120,7 +120,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wpi-7k-I29" kind="push" identifier="nextSegue" id="5pp-dJ-CZa"/>
+                                    <action selector="nextPressed:" destination="Wpi-7k-I29" eventType="touchUpInside" id="nVN-7D-DAk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luN-Vt-zvd">
@@ -159,6 +159,7 @@
                     <connections>
                         <outlet property="answerTextField" destination="waN-o3-yVy" id="gqF-ag-NJD"/>
                         <outlet property="firstNumberLabel" destination="3i7-lF-q6R" id="gly-JA-lWk"/>
+                        <outlet property="nextButton" destination="JI8-DM-Pzt" id="Kg4-hA-of9"/>
                         <outlet property="secondNumberLabel" destination="igc-Y8-rov" id="nre-t2-jaP"/>
                         <outlet property="timerLabel" destination="luN-Vt-zvd" id="cU7-jc-VSh"/>
                         <segue destination="oal-HE-40O" kind="push" identifier="doneSegue" id="xMi-W7-e4h"/>
@@ -267,7 +268,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="mLZ-Db-Pqa"/>
-    </inferredMetricsTieBreakers>
 </document>

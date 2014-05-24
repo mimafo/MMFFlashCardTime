@@ -63,17 +63,20 @@
 
 +(instancetype)createRandomProblemWithOperation:(OperationType)operation
 {
-    NSUInteger lowerBounds = MIN_NUMBER;
+    NSUInteger lowerBounds = (operation == kSubtraction) ? 1 : MIN_NUMBER;
     NSUInteger uppperBounds = MAX_NUMBER;
     
     if (operation == kMultiplication)
         uppperBounds = MULTIPLICATION_MAX_NUMBER;
     
+    
     MMFProblem *problem = [self new];
     problem.operation = operation;
     problem.firstNumber = [MMFProblem generateRandomNumberWithMin:lowerBounds
                                                            andMax:uppperBounds];
+    
     if (operation == kSubtraction) {
+        lowerBounds = MIN_NUMBER;
         problem.secondNumber = [MMFProblem generateRandomNumberWithMin:lowerBounds
                                                                 andMax:problem.firstNumber];
     } else {
@@ -88,7 +91,7 @@
 
 +(NSUInteger)generateRandomNumberWithMin:(NSUInteger) minimum andMax:(NSUInteger) maximum
 {
-    int rndValue = 0;
+    NSUInteger rndValue = 0;
     if (maximum > minimum) {
         rndValue = minimum + arc4random() % (maximum - minimum);
     }

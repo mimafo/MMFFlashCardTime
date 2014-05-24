@@ -26,6 +26,7 @@
 {
     MMFTest *test = [MMFTest sharedTest];
     test.operation = operation;
+    test.correctCount = 0;
     test.startDate = [NSDate new];
 }
 
@@ -76,6 +77,9 @@
     
     NSInteger minutes = seconds / secondsInAMinute;
     NSInteger remainderSeconds =  seconds - (secondsInAMinute * minutes);
+    
+    minutes = minutes < 0 ? 0 : minutes;
+    remainderSeconds = remainderSeconds < 0 ? 0 : remainderSeconds;
     
     remaining = [NSString stringWithFormat:@"%ld:%02ld",(long)minutes, (long)remainderSeconds];
     return remaining;
