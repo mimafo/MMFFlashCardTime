@@ -14,7 +14,7 @@
 @property (nonatomic, assign) OperationType operation;
 @property (nonatomic, assign) NSUInteger correctCount;
 @property (nonatomic, strong) NSDate *startDate;
-@property (nonatomic, assign) NSUInteger durationMinutes;
+@property (nonatomic, assign, readonly) NSUInteger durationMinutes;
 
 -(id)initWithOperation:(OperationType)operation;
 -(BOOL)isTimeExpired;

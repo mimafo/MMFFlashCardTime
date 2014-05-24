@@ -7,6 +7,7 @@
 //
 
 #import "MMFProblem.h"
+#import "MMFGameSettings.h"
 
 @implementation MMFProblem
 

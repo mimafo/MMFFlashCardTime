@@ -43,7 +43,10 @@ static NSString * const HighScoreKey = @"HighScoreKey";
         _dataSource = [[NSUserDefaults standardUserDefaults] objectForKey:GameSettingsKey];
         if (_dataSource == nil) {
             _dataSource = [NSMutableDictionary dictionary];
-            [self save];
+            _dataSource[UserNameKey] = @"";
+            _dataSource[LevelKey] = @(kEasy);
+            _dataSource[GameDurationKey] = @(2);
+            _dataSource[HighScoreKey] = @(0);
         }
     }
     return _dataSource;
@@ -52,24 +55,19 @@ static NSString * const HighScoreKey = @"HighScoreKey";
 #pragma mark - Initializers
 -(id)init
 {
-    self = [super init];
-    if (self) {
-        self.level = kEasy;
-        self.gameDuration = 2;
-        self.highScore = 0;
-    }
-    return self;
+    return [self initWithDataSource];
 }
 
 -(id)initWithDataSource
 {
-    self = [self init];
+    self = [super init];
     
-    self.userName = self.dataSource[UserNameKey];
-    self.level = [self.dataSource[LevelKey] unsignedIntegerValue];
-    self.gameDuration = [self.dataSource[GameDurationKey] unsignedIntegerValue];
-    self.highScore = [self.dataSource[HighScoreKey] unsignedIntegerValue];
-    
+    if (self) {
+        self.userName = self.dataSource[UserNameKey];
+        self.level = [self.dataSource[LevelKey] unsignedIntegerValue];
+        self.gameDuration = [self.dataSource[GameDurationKey] unsignedIntegerValue];
+        self.highScore = [self.dataSource[HighScoreKey] unsignedIntegerValue];
+    }
     return self;
 }
 
@@ -85,7 +83,5 @@ static NSString * const HighScoreKey = @"HighScoreKey";
     [defaults setObject:[self.dataSource copy] forKey:GameSettingsKey];
     [defaults synchronize];
 }
-
-
 
 @end

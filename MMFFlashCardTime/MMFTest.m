@@ -7,6 +7,7 @@
 //
 
 #import "MMFTest.h"
+#import "MMFGameSettings.h"
 
 @implementation MMFTest
 
@@ -30,13 +31,18 @@
     test.startDate = [NSDate new];
 }
 
+#pragma mark - Property getters and setters
+-(NSUInteger)durationMinutes
+{
+    return [MMFGameSettings sharedGameSettings].gameDuration;
+}
+
 -(id)init
 {
     self = [super init];
     if (self) {
         self.correctCount = 0;
         self.startDate = [NSDate new];
-        self.durationMinutes = 2;
     }
     return self;
 }

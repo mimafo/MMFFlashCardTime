@@ -70,7 +70,7 @@ static NSString * const startSegue = @"startSegue";
         [MMFTest initializeTestWithOperation:operation];
         
         MMFProblemViewController *vc = (MMFProblemViewController *)segue.destinationViewController;
-        vc.problemNumber = 1;
+        vc.problemNumber = 0;
         
     }
 }
