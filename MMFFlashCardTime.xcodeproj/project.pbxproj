@@ -278,7 +278,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MMF;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Michael Folcher";
 				TargetAttributes = {
 					27DE579019089B8300F01542 = {
@@ -401,6 +401,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -461,6 +462,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMFFlashCardTime/MMFFlashCardTime-Prefix.pch";
 				INFOPLIST_FILE = "MMFFlashCardTime/MMFFlashCardTime-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mimafo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -474,6 +476,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMFFlashCardTime/MMFFlashCardTime-Prefix.pch";
 				INFOPLIST_FILE = "MMFFlashCardTime/MMFFlashCardTime-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mimafo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -495,6 +498,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MMFFlashCardTimeTests/MMFFlashCardTimeTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mimafo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -513,6 +517,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMFFlashCardTime/MMFFlashCardTime-Prefix.pch";
 				INFOPLIST_FILE = "MMFFlashCardTimeTests/MMFFlashCardTimeTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mimafo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, GameLevel) {
     kEasy,
     kMedium,
     kDifficult
-} GameLevel;
+};
 
 @interface MMFGameSettings : NSObject
 
